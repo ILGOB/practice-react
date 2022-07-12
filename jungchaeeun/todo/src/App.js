@@ -9,8 +9,8 @@ function App() {
     if (toDo === '') {
       return;
     }
-    setToDo('');
     setToDos((currentArray) => [toDo, ...currentArray]);
+    setToDo('');
   };
   console.log(toDos);
   return (
@@ -25,6 +25,13 @@ function App() {
         <button>추가</button>
       </form>
       <h1>Todo List</h1>
+      <div>
+        <ol>
+          {toDos.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 }
